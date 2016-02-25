@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+<script type="text/javascript">
+    $(function() {
+        $("input").on("change", function() {
+            var $currentElement = $(this),
+            currentValue = $currentElement.val(),
+            outputContainer = $(this).data('output');  
+
+            $.ajax({
+                type: "GET",
+                url: $SCRIPT_ROOT + "/lookupcard/{{game_class}}",
+                data: { cardpattern: currentValue},
+                success: function(resp) {
+                    $("#" + outputContainer).html(resp.html);
+                }
+        });     
+    });
+  });
+</script>
+<div class="card-box">
+    <input type="text" size="20" data-output="card1">
+    <div id="card1"></div>
+</div>
+<div class="card-box">
+    <input type="text" size="20" data-output="card2">
+    <div id="card2"></div>
+</div>
+<div class="card-box">
+    <input type="text" size="20" data-output="card3">
+    <div id="card3"></div>
+</div>
+
+{% endblock %}

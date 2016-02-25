@@ -1,0 +1,28 @@
+body {
+    background: url("background.jpg");
+}
+
+.card-box {
+    float: left;
+    width: 300px;
+}
+
+.card-box h1 {
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px #000000,
+                 -1px 1px #000000,
+                  1px -1px #000000,
+                  1px 1px #000000;
+}
+
+.card-box input {
+    width: 90%;
+    text-align: center
+    margin: auto;
+}
+
+#page-container {
+    margin: auto;
+    width: 900px;
+}
